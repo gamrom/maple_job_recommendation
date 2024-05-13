@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import "./global.css";
 
 // Font files can be colocated inside of `pages`
 const mapleFont = localFont({
@@ -30,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${mapleFont.className} ${mapleFont.style}`}>
+      <body className={`container mx-auto px-4 ${mapleFont.className}`}>
         {children}
       </body>
     </html>
