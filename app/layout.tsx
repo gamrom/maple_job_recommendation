@@ -13,12 +13,11 @@ const mapleFont = localFont({
       path: "./fonts/MaplestoryOTFBold.otf",
       weight: "700",
       style: "bold",
-      
     },
   ],
 });
 
-//meta style
+//meta
 export const metadata: Metadata = {
   title: "메이플 직업 추천",
   description: "메이플스토리 직업 추천 사이트",
@@ -33,7 +32,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={`${mapleFont.className} ${mapleFont.style}`}>
         {children}
-      </body
+      </body>
     </html>
   );
 }
