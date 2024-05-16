@@ -9,8 +9,46 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-
+model Job {
+  id                     Int      @id @default(autoincrement())
+  name                   String   @unique
+  job_type               String[]
+  base_attack_speed      String?
+  secondary_weapon_power String?
+  main_stat              String[]
+  sub_stat               String?
+  attack_power           Int?
+  damage                 Int?
+  boss_damage            Int?
+  final_damage           Int?
+  defense_ignore         Int?
+  attribute              String[]
+  additional_hit         String?
+  damage_distribution    String?
+  abnormal_status_resist Int?
+  all_attribute_resist   Int?
+  full_stance            String?
+  super_stance           String?
+  mp_guard               String?
+  damage_reduction       Int?
+  guard_possible         String?
+  critical_rate          Int?
+  critical_damage        Int?
+  skill_cost             String?
+  jump                   String?
+  air_descent            String?
+  knock_back             String?
+  buff_disabled          String?
+  buff_removal           String?
+  self_bind              String?
+  invincibility          Decimal?
+  resurrection           String?
+  death_prevention       String?
+  link_priority          Int?
+  union_priority         Int?
+}

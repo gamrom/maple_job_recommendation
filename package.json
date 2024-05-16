@@ -2,6 +2,9 @@
   "name": "maple_job_recommendation",
   "version": "0.1.0",
   "private": true,
+  "primsa": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.14.0",
     "@vercel/postgres": "^0.8.0",
     "autoprefixer": "^10.4.19",
     "next": "14.2.3",
@@ -22,7 +26,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8.4.38",
-    "prisma": "^5.13.0",
+    "prisma": "^5.14.0",
     "tailwindcss": "^3.4.3",
     "typescript": "^5"
   }
