@@ -3,9 +3,9 @@
 import PageTabs from "./PageTabs";
 import Search from "@/components/Search";
 import { useState } from "react";
-import { Ttab } from "@/types";
+import { Ttab, Tjob } from "@/types";
 
-export const Main: React.FC = () => {
+export const Main = () => {
   const [tab, setTab] = useState<Ttab>("search");
 
   return (
