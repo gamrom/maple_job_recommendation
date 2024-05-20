@@ -41,6 +41,7 @@ model Job {
   critical_damage        Int?
   skill_cost             String?
   jump                   String?
+  teleport               String?
   air_descent            String?
   knock_back             String?
   buff_disabled          String?
