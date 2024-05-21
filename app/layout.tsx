@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./global.css";
+import { Providers } from "./nextUIProviders";
+import RecoilRootProvider from "./recoilRootProvider";
 
 // Font files can be colocated inside of `pages`
 const mapleFont = localFont({
@@ -31,9 +33,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`container mx-auto px-4 ${mapleFont.className}`}>
-        {children}
-      </body>
+      <RecoilRootProvider>
+        <Providers>
+          <body className={`container mx-auto px-4 ${mapleFont.className}`}>
+            {children}
+          </body>
+        </Providers>
+      </RecoilRootProvider>
     </html>
   );
 }

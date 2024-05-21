@@ -32,7 +32,6 @@ model Job {
   damage_distribution    String?
   abnormal_status_resist Int?
   all_attribute_resist   Int?
-  full_stance            String?
   super_stance           String?
   mp_guard               String?
   damage_reduction       Int?
@@ -52,4 +51,5 @@ model Job {
   death_prevention       String?
   link_priority          Int?
   union_priority         Int?
+  core_difficulty        Int? //1 쉬움, 2 보통, 3 어려움
 }

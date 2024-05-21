@@ -18,7 +18,6 @@ export type Tjob = {
   damage_distribution: string;
   abnormal_status_resist: number;
   all_attribute_resist: number;
-  full_stance: string;
   super_stance: string;
   mp_guard: string;
   damage_reduction: number;
@@ -37,4 +36,5 @@ export type Tjob = {
   death_prevention: string;
   link_priority: number;
   union_priority: number;
+  core_difficulty: number;
 };

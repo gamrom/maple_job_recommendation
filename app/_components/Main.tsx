@@ -5,7 +5,7 @@ import Search from "@/components/Search";
 import { useState } from "react";
 import { Ttab, Tjob } from "@/types";
 
-export const Main = () => {
+export const Main = ({ prismaData }: { prismaData: any }) => {
   const [tab, setTab] = useState<Ttab>("search");
 
   return (

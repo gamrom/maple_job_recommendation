@@ -7,7 +7,7 @@ async function getData() {
 }
 
 export default async function Home() {
-  const data = await getData();
-  console.log(data);
-  return <Main />;
+  const prismaData = await getData();
+  console.log(prismaData);
+  return <Main prismaData={prismaData} />;
 }

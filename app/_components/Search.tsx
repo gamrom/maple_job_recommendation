@@ -1,3 +1,5 @@
+"use client";
+
 import Label from "@/components/Label";
 import ButtonGroup from "@/components/ButtonGroup";
 import { useState } from "react";
@@ -19,6 +21,7 @@ const Search = () => {
     가드: ["가능", "불가능"],
     점프: ["더블", "트리플"],
     "공중 하강": ["가능", "불가능"],
+    밀격: ["가능", "불가능"],
     "버프 불능": ["가능", "불가능"],
     "버프 해제": ["가능", "불가능"],
     바인드: ["보유", "미보유"],
@@ -26,32 +29,9 @@ const Search = () => {
     "부활 및 사망 방지": ["보유", "미보유"],
   };
 
-  const [filter, setFilter] = useState<{
-    [key: string]: string;
-  }>({
-    직업군: "",
-    "자력 풀공속": "",
-    "보조무기 강화": "",
-    주스탯: "",
-    부스탯: "",
-    속성: "",
-    "추가 타격": "",
-    풀스탠스: "",
-    "슈퍼 스탠스": "",
-    MP가드: "",
-    가드: "",
-    점프: "",
-    "공중 하강": "",
-    "버프 불능": "",
-    "버프 해제": "",
-    바인드: "",
-    무적: "",
-    "부활 및 사망 방지": "",
-  });
-
   return (
-    <div className="page_layout_style mt-8 grid grid-cols-1 md:grid-cols-2">
-      <div className="flex flex-wrap order-last md:order-first mt-3 justify-center">
+    <div className="grid grid-cols-1 mt-8 page_layout_style md:grid-cols-2">
+      <div className="flex flex-wrap justify-center order-last mt-3 md:order-first">
         {JOB_NAMES.map((jobName, index) => {
           return <CharCard key={`job_card_${index}`} name={jobName} />;
         })}
@@ -59,182 +39,115 @@ const Search = () => {
       <div className="flex flex-wrap gap-[10px] content-start">
         <div className="flex flex-col">
           <Label text="직업군" />
-          <ButtonGroup
-            name="직업군"
-            properties={buttonProperty["직업군"]}
-            value={filter["직업군"]}
-            filter={filter}
-            setFilter={setFilter}
-          />
+          <ButtonGroup name="직업군" properties={buttonProperty["직업군"]} />
         </div>
+
         <div className="flex flex-col">
-          <Label text="자력 풀공속" />
+          <Label text="자력 풀공속" tooltipText="주 선택 무기 기준" />
           <ButtonGroup
             name="자력 풀공속"
             properties={buttonProperty["자력 풀공속"]}
-            value={filter["자력 풀공속"]}
-            filter={filter}
-            setFilter={setFilter}
           />
         </div>
+
         <div>
           <Label text="보조무기 강화" />
           <ButtonGroup
             name="보조무기 강화"
             properties={buttonProperty["보조무기 강화"]}
-            value={filter["보조무기 강화"]}
-            filter={filter}
-            setFilter={setFilter}
           />
         </div>
         <div>
           <Label text="주스탯" />
-          <ButtonGroup
-            name="주스탯"
-            properties={buttonProperty["주스탯"]}
-            value={filter["주스탯"]}
-            filter={filter}
-            setFilter={setFilter}
-          />
+          <ButtonGroup name="주스탯" properties={buttonProperty["주스탯"]} />
         </div>
         <div>
           <Label text="부스탯" />
-          <ButtonGroup
-            name="부스탯"
-            properties={buttonProperty["부스탯"]}
-            value={filter["부스탯"]}
-            filter={filter}
-            setFilter={setFilter}
-          />
+          <ButtonGroup name="부스탯" properties={buttonProperty["부스탯"]} />
         </div>
         <div>
           <Label text="속성" />
-          <ButtonGroup
-            name="속성"
-            properties={buttonProperty["속성"]}
-            value={filter["속성"]}
-            filter={filter}
-            setFilter={setFilter}
-          />
+          <ButtonGroup name="속성" properties={buttonProperty["속성"]} />
         </div>
         <div>
-          <Label text="추가 타격" />
+          <Label
+            text="추가 타격"
+            tooltipText="쉐도우 파트너 등, 최종 데미지 효율에 영향을 받지 않는 데미지 증가"
+          />
           <ButtonGroup
             name="추가 타격"
             properties={buttonProperty["추가 타격"]}
-            value={filter["추가 타격"]}
-            filter={filter}
-            setFilter={setFilter}
           />
         </div>
-        <div>
-          <Label text="풀스탠스" />
-          <ButtonGroup
-            name="풀스탠스"
-            properties={buttonProperty["풀스탠스"]}
-            value={filter["풀스탠스"]}
-            filter={filter}
-            setFilter={setFilter}
-          />
-        </div>
+
         <div>
           <Label text="슈퍼 스탠스" />
           <ButtonGroup
             name="슈퍼 스탠스"
             properties={buttonProperty["슈퍼 스탠스"]}
-            value={filter["슈퍼 스탠스"]}
-            filter={filter}
-            setFilter={setFilter}
           />
         </div>
+
         <div>
-          <Label text="MP가드" />
-          <ButtonGroup
-            name="MP가드"
-            properties={buttonProperty["MP가드"]}
-            value={filter["MP가드"]}
-            filter={filter}
-            setFilter={setFilter}
-          />
+          <Label text="가드" tooltipText="상태이상, 피격 회피 등의 가드 유무" />
+          <ButtonGroup name="가드" properties={buttonProperty["가드"]} />
         </div>
         <div>
-          <Label text="가드" />
-          <ButtonGroup
-            name="가드"
-            properties={buttonProperty["가드"]}
-            value={filter["가드"]}
-            filter={filter}
-            setFilter={setFilter}
-          />
+          <Label text="점프" tooltipText="기본 점프 스킬 기준" />
+          <ButtonGroup name="점프" properties={buttonProperty["점프"]} />
         </div>
         <div>
-          <Label text="점프" />
-          <ButtonGroup
-            name="점프"
-            properties={buttonProperty["점프"]}
-            value={filter["점프"]}
-            filter={filter}
-            setFilter={setFilter}
+          <Label
+            text="공중 하강"
+            tooltipText="텔레포트, 거스트다이브, 버스트 스탭 등"
           />
-        </div>
-        <div>
-          <Label text="공중 하강" />
           <ButtonGroup
             name="공중 하강"
             properties={buttonProperty["공중 하강"]}
-            value={filter["공중 하강"]}
-            filter={filter}
-            setFilter={setFilter}
           />
         </div>
+
         <div>
-          <Label text="버프 불능" />
+          <Label text="밀격/넉백" tooltipText="끌격은 제외" />
+          <ButtonGroup name="밀격" properties={buttonProperty["밀격"]} />
+        </div>
+
+        <div>
+          <Label
+            text="버프 불능"
+            tooltipText="일정 시간동안 몬스터가 버프를 못하게 하는 스킬 유무"
+          />
           <ButtonGroup
             name="버프 불능"
             properties={buttonProperty["버프 불능"]}
-            value={filter["버프 불능"]}
-            filter={filter}
-            setFilter={setFilter}
           />
         </div>
         <div>
-          <Label text="버프 해제" />
+          <Label text="버프 해제" tooltipText="디스펠 등의 스킬 유무" />
           <ButtonGroup
             name="버프 해제"
             properties={buttonProperty["버프 해제"]}
-            value={filter["버프 해제"]}
-            filter={filter}
-            setFilter={setFilter}
           />
         </div>
         <div>
-          <Label text="바인드" />
-          <ButtonGroup
-            name="바인드"
-            properties={buttonProperty["바인드"]}
-            value={filter["바인드"]}
-            filter={filter}
-            setFilter={setFilter}
+          <Label
+            text="자체 바인드"
+            tooltipText="5차 공용 바인드를 제외한 자체 바인드 유무"
           />
+          <ButtonGroup name="바인드" properties={buttonProperty["바인드"]} />
         </div>
         <div>
-          <Label text="무적" />
-          <ButtonGroup
-            name="무적"
-            properties={buttonProperty["무적"]}
-            value={filter["무적"]}
-            filter={filter}
-            setFilter={setFilter}
+          <Label
+            text="무적"
+            tooltipText="가지고 있는 무적기 중 가장 긴 시간. 실제 플레이에서는 가동률이 더 중요할 수 있음."
           />
+          <ButtonGroup name="무적" properties={buttonProperty["무적"]} />
         </div>
         <div>
           <Label text="부활 및 사망 방지" />
           <ButtonGroup
             name="부활 및 사망 방지"
             properties={buttonProperty["부활 및 사망 방지"]}
-            value={filter["부활 및 사망 방지"]}
-            filter={filter}
-            setFilter={setFilter}
           />
         </div>
       </div>
