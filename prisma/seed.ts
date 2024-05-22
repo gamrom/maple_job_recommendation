@@ -44,6 +44,7 @@ async function main() {
       link_priority: 3,
       union_priority: 3,
       core_difficulty: 2,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -86,6 +87,7 @@ async function main() {
       link_priority: 3,
       union_priority: 3,
       core_difficulty: 1,
+      job_role: ["시너지 딜러"],
     },
   });
 
@@ -128,6 +130,7 @@ async function main() {
       link_priority: 3,
       union_priority: 4,
       core_difficulty: 1,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -170,6 +173,7 @@ async function main() {
       link_priority: 2,
       union_priority: 4,
       core_difficulty: 3,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -212,6 +216,7 @@ async function main() {
       link_priority: 2,
       union_priority: 3,
       core_difficulty: 1,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -254,6 +259,7 @@ async function main() {
       link_priority: 2,
       union_priority: 3,
       core_difficulty: 1,
+      job_role: ["서포터"],
     },
   });
 
@@ -296,6 +302,7 @@ async function main() {
       link_priority: 4,
       union_priority: 3,
       core_difficulty: 2,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -338,6 +345,7 @@ async function main() {
       link_priority: 4,
       union_priority: 1,
       core_difficulty: 1,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -380,6 +388,7 @@ async function main() {
       link_priority: 4,
       union_priority: 3,
       core_difficulty: 3,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -422,6 +431,7 @@ async function main() {
       link_priority: 2,
       union_priority: 1,
       core_difficulty: 1,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -464,6 +474,7 @@ async function main() {
       link_priority: 2,
       union_priority: 3,
       core_difficulty: 1,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -506,6 +517,7 @@ async function main() {
       link_priority: 2,
       union_priority: 3,
       core_difficulty: 1,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -548,6 +560,7 @@ async function main() {
       link_priority: 3,
       union_priority: 3,
       core_difficulty: 1,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -590,6 +603,7 @@ async function main() {
       link_priority: 3,
       union_priority: 2,
       core_difficulty: 3,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -632,6 +646,7 @@ async function main() {
       link_priority: 3,
       union_priority: 3,
       core_difficulty: 2,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -674,6 +689,7 @@ async function main() {
       link_priority: 2,
       union_priority: 4,
       core_difficulty: 1,
+      job_role: ["시너지 딜러"],
     },
   });
 
@@ -716,6 +732,7 @@ async function main() {
       link_priority: 2,
       union_priority: 3,
       core_difficulty: 1,
+      job_role: ["시너지 딜러"],
     },
   });
 
@@ -758,6 +775,7 @@ async function main() {
       link_priority: 2,
       union_priority: 3,
       core_difficulty: 2,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -800,6 +818,7 @@ async function main() {
       link_priority: 2,
       union_priority: 3,
       core_difficulty: 1,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -842,6 +861,7 @@ async function main() {
       link_priority: 2,
       union_priority: 3,
       core_difficulty: 2,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -884,6 +904,7 @@ async function main() {
       link_priority: 4,
       union_priority: 4,
       core_difficulty: 1,
+      job_role: ["시너지 딜러"],
     },
   });
 
@@ -926,6 +947,7 @@ async function main() {
       link_priority: 3,
       union_priority: 2,
       core_difficulty: 3,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -968,6 +990,7 @@ async function main() {
       link_priority: 3,
       union_priority: 3,
       core_difficulty: 1,
+      job_role: ["시너지 딜러"],
     },
   });
 
@@ -1010,6 +1033,7 @@ async function main() {
       link_priority: 3,
       union_priority: 2,
       core_difficulty: 2,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -1052,6 +1076,7 @@ async function main() {
       link_priority: 3,
       union_priority: 1,
       core_difficulty: 3,
+      job_role: ["시너지 딜러"],
     },
   });
 
@@ -1094,6 +1119,7 @@ async function main() {
       link_priority: 2,
       union_priority: 4,
       core_difficulty: 1,
+      job_role: ["퓨어 딜러", "세미 시너지 딜러"],
     },
   });
 
@@ -1136,6 +1162,7 @@ async function main() {
       link_priority: 1,
       union_priority: 3,
       core_difficulty: 2,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -1178,6 +1205,7 @@ async function main() {
       link_priority: 1,
       union_priority: 1,
       core_difficulty: 2,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -1220,6 +1248,7 @@ async function main() {
       link_priority: 1,
       union_priority: 4,
       core_difficulty: 2,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -1262,6 +1291,7 @@ async function main() {
       link_priority: 1,
       union_priority: 4,
       core_difficulty: 3,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -1304,6 +1334,7 @@ async function main() {
       link_priority: 1,
       union_priority: 1,
       core_difficulty: 2,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -1346,6 +1377,7 @@ async function main() {
       link_priority: 1,
       union_priority: 2,
       core_difficulty: 3,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -1388,6 +1420,7 @@ async function main() {
       link_priority: 3,
       union_priority: 1,
       core_difficulty: 2,
+      job_role: ["시너지 딜러"],
     },
   });
 
@@ -1429,6 +1462,7 @@ async function main() {
       death_prevention: "불가능",
       link_priority: 2,
       union_priority: 3,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -1471,6 +1505,7 @@ async function main() {
       link_priority: 4,
       union_priority: 3,
       core_difficulty: 1,
+      job_role: ["퓨어 딜러", "세미 시너지 딜러"],
     },
   });
 
@@ -1513,6 +1548,7 @@ async function main() {
       link_priority: 1,
       union_priority: 3,
       core_difficulty: 3,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -1555,6 +1591,7 @@ async function main() {
       link_priority: 2,
       union_priority: 3,
       core_difficulty: 3,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -1597,6 +1634,7 @@ async function main() {
       link_priority: 2,
       union_priority: 3,
       core_difficulty: 2,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -1639,6 +1677,7 @@ async function main() {
       link_priority: 4,
       union_priority: 3,
       core_difficulty: 2,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -1681,6 +1720,7 @@ async function main() {
       link_priority: 1,
       union_priority: 3,
       core_difficulty: 1,
+      job_role: ["시너지 딜러"],
     },
   });
 
@@ -1722,6 +1762,7 @@ async function main() {
       death_prevention: "불가능",
       link_priority: 4,
       union_priority: 3,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -1764,6 +1805,7 @@ async function main() {
       link_priority: 1,
       union_priority: 3,
       core_difficulty: 3,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -1806,6 +1848,7 @@ async function main() {
       link_priority: 1,
       union_priority: 3,
       core_difficulty: 1,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 
@@ -1848,6 +1891,7 @@ async function main() {
       link_priority: 1,
       union_priority: 3,
       core_difficulty: 3,
+      job_role: ["퓨어 딜러"],
     },
   });
 
@@ -1890,6 +1934,7 @@ async function main() {
       link_priority: 2,
       union_priority: 1,
       core_difficulty: 3,
+      job_role: ["시너지 딜러"],
     },
   });
 
@@ -1932,6 +1977,7 @@ async function main() {
       link_priority: 1,
       union_priority: 3,
       core_difficulty: 2,
+      job_role: ["세미 시너지 딜러"],
     },
   });
 }

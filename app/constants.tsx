@@ -98,7 +98,9 @@ export const TEXT_TO_IMAGE_DICT: {
   아크: "char47",
 };
 
-export const PROPERTY_TO_KR = {
+export const PROPERTY_TO_KR: {
+  [key: string]: string;
+} = {
   name: "이름",
   job_type: "직업군",
   base_attack_speed: "자력 풀공속",
@@ -135,4 +137,5 @@ export const PROPERTY_TO_KR = {
   link_priority: "링크 우선 순위",
   union_priority: "유니온 우선 순위",
   core_difficulty: "코어 강화 난이도",
+  job_role: "직업 역할",
 };

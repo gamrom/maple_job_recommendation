@@ -37,6 +37,7 @@ CREATE TABLE "Job" (
     "link_priority" INTEGER,
     "union_priority" INTEGER,
     "core_difficulty" INTEGER,
+    "job_role" TEXT[],
 
     CONSTRAINT "Job_pkey" PRIMARY KEY ("id")
 );

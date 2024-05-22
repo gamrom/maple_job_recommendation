@@ -15,7 +15,7 @@ export const Main = ({ prismaData }: { prismaData: any }) => {
       </div>
       <PageTabs tab={tab} setTab={setTab} />
 
-      {tab === "search" && <Search />}
+      {tab === "search" && <Search data={prismaData} />}
     </div>
   );
 };

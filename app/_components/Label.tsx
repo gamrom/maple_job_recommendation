@@ -1,4 +1,5 @@
 import { Tooltip } from "@nextui-org/tooltip";
+import { PROPERTY_TO_KR } from "../constants";
 
 const Label = ({
   text,
@@ -9,7 +10,7 @@ const Label = ({
 }) => {
   return (
     <div className="flex items-center mt-3">
-      <div className="w-fit">{text}</div>
+      <div className="w-fit">{PROPERTY_TO_KR[text]}</div>
       {tooltipText && (
         <Tooltip content={tooltipText}>
           <svg

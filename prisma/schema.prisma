@@ -52,4 +52,5 @@ model Job {
   link_priority          Int?
   union_priority         Int?
   core_difficulty        Int? //1 쉬움, 2 보통, 3 어려움
+  job_role               String[]
 }

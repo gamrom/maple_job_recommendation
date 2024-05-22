@@ -33,13 +33,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <RecoilRootProvider>
-        <Providers>
-          <body className={`container mx-auto px-4 ${mapleFont.className}`}>
-            {children}
-          </body>
-        </Providers>
-      </RecoilRootProvider>
+      <body
+        className={`container mx-auto px-4 ${mapleFont.className}`}
+        suppressHydrationWarning={true}
+      >
+        <RecoilRootProvider>
+          <Providers>{children}</Providers>
+        </RecoilRootProvider>
+      </body>
     </html>
   );
 }

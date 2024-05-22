@@ -2,152 +2,199 @@
 
 import Label from "@/components/Label";
 import ButtonGroup from "@/components/ButtonGroup";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CharCard from "@/components/CharCard";
 import { JOB_NAMES } from "../constants";
+import { useRecoilState } from "recoil";
+import { filterState, jobState } from "../atoms";
+import { Tjob } from "@/types";
+import { RecoilState } from "recoil";
 
-const Search = () => {
+const Search = ({ data }: { data: Tjob[] }) => {
   const buttonProperty = {
-    직업군: ["전사", "마법사", "궁수", "도적", "해적", "복합"],
-    "자력 풀공속": ["가능", "불가능"],
-    "보조무기 강화": ["가능", "불가능"],
-    주스탯: ["STR", "DEX", "INT", "LUK"],
-    부스탯: ["STR", "DEX", "INT", "LUK"],
-    속성: ["물리", "불", "얼음", "전기", "독", "성", "암흑"],
-    "추가 타격": ["가능", "불가능"],
-    풀스탠스: ["가능", "불가능"],
-    "슈퍼 스탠스": ["가능", "불가능"],
-    MP가드: ["가능", "불가능"],
-    가드: ["가능", "불가능"],
-    점프: ["더블", "트리플"],
-    "공중 하강": ["가능", "불가능"],
-    밀격: ["가능", "불가능"],
-    "버프 불능": ["가능", "불가능"],
-    "버프 해제": ["가능", "불가능"],
-    바인드: ["보유", "미보유"],
-    무적: ["보유", "미보유"],
-    "부활 및 사망 방지": ["보유", "미보유"],
+    job_type: ["전사", "마법사", "궁수", "도적", "해적", "복합"],
+    job_role: ["서포터", "퓨어 딜러", "세미 시너지 딜러", "시너지 딜러"],
+    base_attack_speed: ["가능", "불가능"],
+    secondary_weapon_power: ["가능", "불가능"],
+    main_stat: ["STR", "DEX", "INT", "LUK"],
+    attribute: ["물리", "불", "얼음", "전기", "독", "성", "암흑"],
+    additional_hit: ["가능", "불가능"],
+    super_stance: ["가능", "불가능"],
+    guard_possible: ["가능", "불가능"],
+    jump: ["더블", "트리플"],
+    air_descent: ["가능", "불가능"],
+    knock_back: ["가능", "불가능"],
+    buff_disabled: ["가능", "불가능"],
+    buff_removal: ["가능", "불가능"],
+    self_bind: ["보유", "미보유"],
+    resurrection: ["보유", "미보유"],
+    death_prevention: ["보유", "미보유"],
   };
+
+  const [jobs, setJobs] = useRecoilState<string[]>(jobState);
+  const filter = useRecoilState(filterState);
+  console.log(data);
+
+  useEffect(() => {
+    let filteredJobs: any = data.map((job) => job.name);
+    const keys = Object.keys(filter);
+    if (keys.length === 0) {
+      return setJobs(filteredJobs);
+    }
+    () => setJobs(filteredJobs);
+  }, [filter, data]);
 
   return (
     <div className="grid grid-cols-1 mt-8 page_layout_style md:grid-cols-2">
       <div className="flex flex-wrap justify-center order-last mt-3 md:order-first">
-        {JOB_NAMES.map((jobName, index) => {
+        {jobs.map((jobName, index) => {
           return <CharCard key={`job_card_${index}`} name={jobName} />;
         })}
       </div>
       <div className="flex flex-wrap gap-[10px] content-start">
         <div className="flex flex-col">
-          <Label text="직업군" />
-          <ButtonGroup name="직업군" properties={buttonProperty["직업군"]} />
+          <Label text="job_type" />
+          <ButtonGroup
+            name="job_type"
+            properties={buttonProperty["job_type"]}
+          />
         </div>
 
         <div className="flex flex-col">
-          <Label text="자력 풀공속" tooltipText="주 선택 무기 기준" />
+          <Label text="job_role" tooltipText="주 선택 무기 기준" />
           <ButtonGroup
-            name="자력 풀공속"
-            properties={buttonProperty["자력 풀공속"]}
+            name="job_role"
+            properties={buttonProperty["job_role"]}
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <Label text="base_attack_speed" tooltipText="주 선택 무기 기준" />
+          <ButtonGroup
+            name="base_attack_speed"
+            properties={buttonProperty["base_attack_speed"]}
           />
         </div>
 
         <div>
-          <Label text="보조무기 강화" />
+          <Label text="secondary_weapon_power" />
           <ButtonGroup
-            name="보조무기 강화"
-            properties={buttonProperty["보조무기 강화"]}
+            name="secondary_weapon_power"
+            properties={buttonProperty["secondary_weapon_power"]}
           />
         </div>
         <div>
-          <Label text="주스탯" />
-          <ButtonGroup name="주스탯" properties={buttonProperty["주스탯"]} />
+          <Label text="main_stat" />
+          <ButtonGroup
+            name="main_stat"
+            properties={buttonProperty["main_stat"]}
+          />
         </div>
+
         <div>
-          <Label text="부스탯" />
-          <ButtonGroup name="부스탯" properties={buttonProperty["부스탯"]} />
-        </div>
-        <div>
-          <Label text="속성" />
-          <ButtonGroup name="속성" properties={buttonProperty["속성"]} />
+          <Label text="attribute" />
+          <ButtonGroup
+            name="attribute"
+            properties={buttonProperty["attribute"]}
+          />
         </div>
         <div>
           <Label
-            text="추가 타격"
+            text="additional_hit"
             tooltipText="쉐도우 파트너 등, 최종 데미지 효율에 영향을 받지 않는 데미지 증가"
           />
           <ButtonGroup
-            name="추가 타격"
-            properties={buttonProperty["추가 타격"]}
+            name="additional_hit"
+            properties={buttonProperty["additional_hit"]}
           />
         </div>
 
         <div>
-          <Label text="슈퍼 스탠스" />
+          <Label text="super_stance" />
           <ButtonGroup
-            name="슈퍼 스탠스"
-            properties={buttonProperty["슈퍼 스탠스"]}
+            name="super_stance"
+            properties={buttonProperty["super_stance"]}
           />
         </div>
 
-        <div>
-          <Label text="가드" tooltipText="상태이상, 피격 회피 등의 가드 유무" />
-          <ButtonGroup name="가드" properties={buttonProperty["가드"]} />
-        </div>
-        <div>
-          <Label text="점프" tooltipText="기본 점프 스킬 기준" />
-          <ButtonGroup name="점프" properties={buttonProperty["점프"]} />
-        </div>
         <div>
           <Label
-            text="공중 하강"
+            text="guard_possible"
+            tooltipText="상태이상, 피격 회피 등의 가드 유무"
+          />
+          <ButtonGroup
+            name="guard_possible"
+            properties={buttonProperty["guard_possible"]}
+          />
+        </div>
+        <div>
+          <Label text="jump" tooltipText="기본 점프 스킬 기준" />
+          <ButtonGroup name="jump" properties={buttonProperty["jump"]} />
+        </div>
+
+        <div>
+          <Label
+            text="air_descent"
             tooltipText="텔레포트, 거스트다이브, 버스트 스탭 등"
           />
           <ButtonGroup
-            name="공중 하강"
-            properties={buttonProperty["공중 하강"]}
+            name="air_descent"
+            properties={buttonProperty["air_descent"]}
           />
         </div>
 
         <div>
-          <Label text="밀격/넉백" tooltipText="끌격은 제외" />
-          <ButtonGroup name="밀격" properties={buttonProperty["밀격"]} />
+          <Label
+            text="knock_back"
+            tooltipText="밀격과 넉백 유무. 끌격은 제외"
+          />
+          <ButtonGroup
+            name="knock_back"
+            properties={buttonProperty["knock_back"]}
+          />
         </div>
 
         <div>
           <Label
-            text="버프 불능"
+            text="buff_disabled"
             tooltipText="일정 시간동안 몬스터가 버프를 못하게 하는 스킬 유무"
           />
           <ButtonGroup
-            name="버프 불능"
-            properties={buttonProperty["버프 불능"]}
+            name="buff_disabled"
+            properties={buttonProperty["buff_disabled"]}
           />
         </div>
         <div>
-          <Label text="버프 해제" tooltipText="디스펠 등의 스킬 유무" />
+          <Label text="buff_removal" tooltipText="디스펠 등의 스킬 유무" />
           <ButtonGroup
-            name="버프 해제"
-            properties={buttonProperty["버프 해제"]}
+            name="buff_removal"
+            properties={buttonProperty["buff_removal"]}
           />
         </div>
         <div>
           <Label
-            text="자체 바인드"
+            text="self_bind"
             tooltipText="5차 공용 바인드를 제외한 자체 바인드 유무"
           />
-          <ButtonGroup name="바인드" properties={buttonProperty["바인드"]} />
-        </div>
-        <div>
-          <Label
-            text="무적"
-            tooltipText="가지고 있는 무적기 중 가장 긴 시간. 실제 플레이에서는 가동률이 더 중요할 수 있음."
-          />
-          <ButtonGroup name="무적" properties={buttonProperty["무적"]} />
-        </div>
-        <div>
-          <Label text="부활 및 사망 방지" />
           <ButtonGroup
-            name="부활 및 사망 방지"
-            properties={buttonProperty["부활 및 사망 방지"]}
+            name="self_bind"
+            properties={buttonProperty["self_bind"]}
+          />
+        </div>
+
+        <div>
+          <Label text="resurrection" />
+          <ButtonGroup
+            name="resurrection"
+            properties={buttonProperty["resurrection"]}
+          />
+        </div>
+
+        <div>
+          <Label text="death_prevention" />
+          <ButtonGroup
+            name="death_prevention"
+            properties={buttonProperty["death_prevention"]}
           />
         </div>
       </div>

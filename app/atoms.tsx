@@ -1,45 +1,14 @@
-import { atom } from "recoil";
+import { atom, RecoilState } from "recoil";
+import { JOB_NAMES } from "./constants";
 
 export const filterState = atom({
   key: "toggleFilter", // unique ID (with respect to other atoms/selectors)
-  default: {
-    name: null,
-    job_type: [""],
-    base_attack_speed: null,
-    secondary_weapon_power: null,
-    main_stat: [],
-    sub_stat: null,
-    attack_power: null,
-    damage: null,
-    boss_damage: null,
-    final_damage: null,
-    defense_ignore: null,
-    attribute: [],
-    additional_hit: null,
-    damage_distribution: null,
-    abnormal_status_resist: null,
-    all_attribute_resist: null,
-    super_stance: null,
-    mp_guard: null,
-    damage_reduction: null,
-    guard_possible: null,
-    critical_damage: null,
-    critical_rate: null,
-    skill_cost: null,
-    jump: null,
-    teleport: null,
-    air_descent: null,
-    knock_back: null,
-    buff_disabled: null,
-    buff_removal: null,
-    self_bind: null,
-    invincibility: null,
-    resurrection: null,
-    death_prevention: null,
-    link_priority: null,
-    union_priority: null,
-    core_difficulty: null,
-  },
+  default: {} as any,
+});
+
+export const jobState = atom({
+  key: "jobState",
+  default: JOB_NAMES as string[],
 });
 
 // {
