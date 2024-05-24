@@ -39,7 +39,7 @@ const Search = ({ data }: { data: Tjob[] }) => {
     let filteredJobs: any = data.map((job) => job.name);
     const keys = Object.keys(filter);
     if (keys.length === 0) {
-      return setJobs(filteredJobs);
+      return setJobs(filteredJobs); //job filter
     }
     () => setJobs(filteredJobs);
   }, [filter, data]);
