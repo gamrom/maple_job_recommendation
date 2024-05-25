@@ -42,7 +42,7 @@ const Search = ({ data }: { data: Tjob[] }) => {
       return setJobs(filteredJobs);
     }
     () => setJobs(filteredJobs);
-  }, [filter, data]);
+  }, [filter, data]); //filter
 
   return (
     <div className="grid grid-cols-1 mt-8 page_layout_style md:grid-cols-2">
