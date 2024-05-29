@@ -48,7 +48,6 @@ const Search = ({ data }: { data: Tjob[] }) => {
     <div className="grid grid-cols-1 mt-8 page_layout_style md:grid-cols-2">
       <div className="flex flex-wrap justify-center order-last mt-3 md:order-first">
         {jobs.map((jobName, index) => {
-          ㄹㄹㄹ;
           return <CharCard key={`job_card_${index}`} name={jobName} />;
         })}
       </div>
