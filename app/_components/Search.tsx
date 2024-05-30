@@ -51,7 +51,7 @@ const Search = ({ data }: { data: Tjob[] }) => {
           return <CharCard key={`job_card_${index}`} name={jobName} />;
         })}
       </div>
-      {/* 깃헙 */}
+
       <div className="flex flex-wrap gap-[10px] content-start">
         <div className="flex flex-col">
           <Label text="job_type" />
