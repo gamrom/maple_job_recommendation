@@ -56,6 +56,7 @@ const Search = ({ data }: { data: Tjob[] }) => {
         <div className="flex flex-col">
           <Label text="job_type" />
           <ButtonGroup
+            ㅇㄹ
             name="job_type"
             properties={buttonProperty["job_type"]}
           />
