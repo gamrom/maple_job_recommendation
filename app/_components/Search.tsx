@@ -57,6 +57,7 @@ const Search = ({ data }: { data: Tjob[] }) => {
           <Label text="job_type" />
           <ButtonGroup
             name="job_type"
+            proeprteis
             properties={buttonProperty["job_type"]}
           />
         </div>
