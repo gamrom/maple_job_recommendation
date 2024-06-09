@@ -58,6 +58,7 @@ const Search = ({ data }: { data: Tjob[] }) => {
           <ButtonGroup
             name="job_type"
             properties={buttonProperty["job_type"]}
+            임시커밋
           />
         </div>
 
